@@ -1,0 +1,17 @@
+# Creat by Rodrigo Melgar Rodrigues
+# Date 26 may 2017 
+version: '3'
+services:
+  nexus3:
+    image: sonatype/nexus3
+    volumes:
+      - "$PWD/nexus-data:/nexus-data"
+    restart: always
+# environment:
+    ports:
+     - '1000:8081'
+     - '5001:5001'
+     - '5002:5002'
+     - '5003:5003'
+#volumes:
+#  nexus-data

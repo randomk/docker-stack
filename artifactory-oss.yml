@@ -1,0 +1,21 @@
+# Creat by Rodrigo Melgar Rodrigues
+# Date 26 may 2017 
+version: '3'
+services:
+  jfrog-artifactory:
+    container_name: jfrog-artifactory
+    image: docker.bintray.io/jfrog/artifactory-oss
+    volumes:
+      - "$PWD/artifactory-data/data:/var/opt/jfrog/artifactory/data"
+      - "$PWD/artifactory-data/logs:/var/opt/jfrog/artifactory/logs"
+      - "$PWD/artifactory-data/backup:/var/opt/jfrog/artifactory/backup"
+      - "$PWD/artifactory-data/etc:/var/opt/jfrog/artifactory/etc"
+    restart: always
+# environment:
+    ports:
+     - "80:880/tcp"
+     - "443:8443/tcp"
+#     - '5005:5005'
+#     - '5006:5006'
+#     - '5007:5007'
+
